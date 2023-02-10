@@ -1,0 +1,754 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+body,button,input,textarea{
+    font-family: 'Poppins' sans-serif;
+    font-size: .938rem;
+}
+body{
+    background-color:  hsl(237, 48%, 11%);
+    color: hsl(220, 9%, 75%);
+}
+h1,h2,h3{
+    color: hsl(220, 15%, 95%);
+    font-weight: 600;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+.container{
+    max-width: 968px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.grid{
+    display: grid;
+    gap: 1.25rem;
+}
+.main{
+    overflow: hidden;
+}
+.section{
+    padding: 4.5rem 0 1rem;
+}
+.section_title,.section_subtitle{
+    text-align: center;
+}
+.section_title{
+    font-size: 1.5rem;
+    color: hsl(250, 65%, 74%); /*first-color*/
+    margin-bottom: 1rem;
+}
+.section_subtitle{
+    display: block;
+    font-size: .90rem;
+    color: hsl(220, 12%, 80%);
+    font-weight: 800;
+    margin-bottom: 0.70rem;
+}
+
+
+/*------------------------------------------------- Header -----------------------------------------------*/
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color:  hsl(237, 48%, 11%);
+    z-index: 100;
+    
+}
+.nav{
+    height: 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    
+}
+.nav_logo{
+    font-size: 2rem;
+    color: hsl(250, 65%, 74%);
+    font-weight: 500;
+    transition: .4s;
+}
+.nav_logo:hover{
+    color: hsl(248, 65%, 71%);
+}
+.nav_menu{
+    position: fixed;
+    bottom: 1rem;
+    background-color: hsl(220, 32%, 16%, .8 ) ;
+    width: 90%;
+    border-radius: 4rem;
+    padding: 1rem 2.25rem;
+    backdrop-filter: blur(10px);
+}
+.nav_list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav_link{
+    color: hsl(220, 8%, 76%);
+    font-size: 1.25rem;
+    padding: .4rem;
+    display: flex;
+    border-radius: 5rem;
+}
+.nav p{
+    font-size: 2rem;
+}
+.active-link{
+    background: linear-gradient(180deg,
+                hsl(250, 65%, 74%, 1),
+                hsl(250, 65%, 74%, .2)
+                );
+    box-shadow: 0 0 16px  hsl(250, 65%, 74%, .4);
+}
+.scroll-header{
+    box-shadow: 0 4px 4px hsla(0, 0, 4%, .3);
+}
+
+
+/*------------------------------------------------- Home section -----------------------------------------------*/
+.home_container{
+    position: relative;
+    row-gap: 4.5rem;
+    padding-top: 2rem;
+}
+.home_data{
+    text-align: center;
+}
+
+.home_greeting{
+    display: block;
+    color: hsl(220, 15%, 95%);
+    margin-bottom: .25rem;
+}
+.home_education{
+    color:  hsl(220, 9%, 75%);
+    margin-bottom: 2.5rem;
+    margin-top: 1rem;
+}
+.home_name{
+    font-size: 2.5rem;
+}
+.home_name span{
+    color: hsl(250, 65%, 74%);
+}
+.home_img{
+    width: 160px;
+}
+.home_handle{
+    justify-self: center;
+    width: 190px;
+    height: 293px;
+    background: linear-gradient(180deg,
+            hsl(250, 65%, 74%, 1),
+            hsl(250, 65%, 74%, .2)                  
+        );
+    border-radius: 10rem 10rem 1rem 1rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.home_buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.home_social,.home_scroll{
+    position: absolute;
+}
+.home_social{
+    bottom: 5rem;
+    display: grid;
+    left: 0;
+    row-gap: .5rem;
+}
+.home_social::after{
+    content: '';
+    width: 32px;
+    height: 2px;
+    background-color: hsl(250, 65%, 74%);
+    transform: rotate(90deg) translate(16px, 3px);
+}
+.home-social-link{
+    width: max-content;
+    background-color: hsl(220, 31%, 14%);
+    color: hsl(250, 65%, 74%);
+    padding: .25rem;
+    border-radius: .25rem;
+    display: flex;
+    font-size: 1.60rem;
+    transition: .4s;
+}
+.home-social-link:hover{
+    background-color: hsl(250, 65%, 74%);
+    color: #fff;
+}
+
+.home_scroll{
+    color: hsl(250, 65%, 74%);
+    right: -1.5rem;
+    bottom: 4rem;
+    display: grid;
+    justify-content: center;
+    row-gap: 2.25rem;
+    
+}
+.home_scroll i{
+    font-size: 2rem;
+}
+.home_scroll-name{
+    font-size: .80rem;
+    margin-left: -18px;
+    transform: rotate(-90deg);
+
+}
+.button{
+    display: inline-block;
+    background-color: hsl(250, 65%, 74%);
+    color: hsl(0, 0%, 0%);
+    padding: .75rem;
+    border-radius: .5rem;
+    font-weight: 500;
+    transition: .4s;
+    margin: 7px;
+  
+}
+.button:hover{
+    background-color: transparent;
+    color: hsl(0, 0%, 100%);
+   
+}
+.button--ghost{
+    background-color: transparent;
+    border: 2px solid hsl(250, 65%, 74%);
+    color: hsl(250, 65%, 74%);
+    font-weight: 500;
+
+} 
+.button--ghost:hover{
+    background-color: hsl(250, 65%, 74%);
+    color: black;
+    font-weight: 500;
+}
+
+
+/*------------------------------------------------- About section -----------------------------------------------*/
+
+.about_container{
+    row-gap: 2.5rem;
+}
+
+.about_img{
+    width: 220px;
+    border-radius: 1.5rem;
+    justify-self: center;
+}
+.about_data{
+    text-align: center;
+}
+.about_info{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .5rem;
+    margin-bottom: 2rem;
+}
+.about_box{
+    background-color: hsl(220, 31%, 14%);
+    border-radius: .75rem;
+    padding: .75rem .5rem;
+}
+.about_icon{
+    font-size: 1.5rem;
+    color:hsl(250, 65%, 74%) ;
+    margin-bottom: .5rem;
+    
+}
+.about_title{
+    font-size: .813rem;
+}
+.about_subtitle{
+    font-size: .625rem;
+}
+.about_description{
+    margin-bottom: 2rem;
+}
+
+
+
+/*------------------------------------------------- Education section -----------------------------------------------*/
+
+
+
+
+.education_container .col{
+    display: flex;
+}
+.col h3{
+    color: hsl(250, 65%, 74%);
+}
+.col .box{
+    padding: 2rem;
+    width: 100%;
+    background-color: hsl(220, 31%, 14%);
+    border: 1px solid hsl(250, 65%, 74%);
+}
+
+.box span{
+    font-weight: 500
+}
+.box p{
+    line-height: 18px;
+    text-align: justify;
+    
+}
+
+
+
+
+
+/*------------------------------------------------- Skills section -----------------------------------------------*/
+
+
+.skills_container{
+    row-gap: 2rem;
+    padding-top: 1rem;
+
+}
+.skills_content{
+    background-color: hsl(220, 31%, 14%);
+    border-radius: 1.25rem;
+
+}
+.skills_title{
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: hsl(250, 65%, 74%);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    
+}
+.skills_box{
+    display: flex;
+    justify-content: center;
+    column-gap: 10rem;
+}
+
+.skills_group{
+    display: grid;
+    align-content: flex-start;
+    row-gap: 3rem;
+
+
+}
+ 
+.skills .bxs-badge-check{
+    font-size: 1rem;
+    color: hsl(250, 65%, 74%);
+}
+.skills_name{
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 18px;
+    
+
+}
+
+.skills_level{
+    font-size: .800rem;
+
+}
+
+/*------------------------------------------------- Work section -----------------------------------------------*/
+
+.work_container{
+    padding-top: 1rem;
+
+}
+.work_filters{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: .75rem;
+    margin-bottom: 2rem;
+}
+
+.work_item{
+    cursor: pointer;
+    color: hsl(220, 15%, 95%);
+    padding: .25rem .75rem;
+    border-radius: .5rem;
+}
+.work_card{
+    background-color: hsl(220, 31%, 14%);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.work_img{
+    border-radius: 1rem;
+    margin-bottom: .75rem;
+
+}
+.work_title{
+    font-size: .938rem;
+    font-weight: 500;
+    margin-bottom: .25rem;
+}
+.work_button{
+    width: max-content;
+    color: hsl(250, 65%, 74%);
+    font-size: .813rem;
+    display: flex;
+    align-items: center;
+    column-gap: .25rem;
+
+}
+.work_button:hover .work_icon{
+    transform: translateX(.25rem);
+}
+.work_icon{
+    font-size: 1rem;
+    transition: .4s;
+
+}
+
+.active-work{
+    background-color: hsl(250, 65%, 74%);
+    color: hsl(237, 48%, 11%);
+}
+
+
+/*------------------------------------------------- Contact section -----------------------------------------------*/
+
+.contact_container{
+    row-gap: 3rem;
+    padding-bottom: 3rem;
+}
+.contact_title{
+    text-align: center;
+    font-size:1rem;
+    margin-bottom: 1.5rem;
+}
+.contact_info{
+    display: grid;
+    gap: 1rem;
+}
+.contact_card{
+    background-color: hsl(220, 31%, 14%);
+    padding: 1rem;
+    border-radius: .75rem;
+    text-align: center;
+}
+.contact_card-icon{
+    font-size: 2rem;
+    color: hsl(220, 15%, 95%);
+    margin-bottom: .25rem;
+}
+
+.contact_card-title,
+.contact_card-data{
+    font-size: .813rem;
+
+}
+.contact_card-title{
+    font-weight: 500;
+}
+.contact_card-data{
+    display: block;
+    margin-bottom: .75rem;
+}
+.contact_button{
+    color: hsl(250, 65%, 74%);
+    font-size: .813rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: .25rem;
+}
+.contact_button:hover .contact_button-icon{
+    transform: translateX(.25rem);
+}
+.contact_button-icon{
+    font-size: 1rem;
+    transition: .4s;
+}
+.contact_form-div{
+    position: relative;
+    margin-bottom: 2rem;
+    height: 4rem;
+}
+.contact_form-input{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid  hsl(220, 4%, 55%);
+    background: none;
+    color: hsl(220, 9%, 75%);
+    outline: none;
+    padding: 1.5rem;
+    border-radius: .75rem;
+    z-index: 1;
+}
+.contact_form-tag{
+    position: absolute;
+    top: -.75rem;
+    left: 1.25rem;
+    font-size: .75rem;
+    padding: .25rem;
+    background-color: hsl(237, 48%, 11%);
+    z-index: 10;
+}
+.contact_form-area{
+    height: 11rem;
+
+}
+.contact_form-area textarea{
+    resize: none;
+}
+
+/*------------------------------------------------- Footer -----------------------------------------------*/
+
+.footer{
+    text-align: center;
+    padding-bottom: 5rem;
+    background-color: hsl(250, 65%, 74%);
+    border-radius: 30% 30% 0 0;
+    
+}
+.footer_title{
+    color: hsl(220, 31%, 14%);
+    font-size: 2rem;
+    padding: 1.2rem;
+
+}
+.footer_social i{
+    padding: 1rem;
+    margin: 1.1rem;
+    border-radius: .45rem;
+    background-color: hsl(220, 31%, 14%);
+    color: hsl(250, 65%, 74%);
+    transition: .4s;
+}
+.footer_social i:hover{
+    color: white;
+    transition: .4s;
+    transform: translatey(-10px);
+}
+.footer .Copyright{
+    color: black;
+    font-weight: 600;
+    font-style: italic;
+}
+
+/*------------------------------------------------- All media Query -----------------------------------------------*/
+
+@media screen and (max-width: 320px){
+    .nav_menu{
+        padding: .1rem 1.5rem;
+    }
+    .home_buttons{
+        flex-direction: column;
+    }
+    .home_handle{
+        width: 150px;
+        height: 253px;
+    }
+    .home_img{
+        width: 130px;
+    }
+    .about_info{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .skills_box{
+        column-gap: 1rem;
+    }
+    .skills_name{
+        font-size: .813rem;
+    }
+    .services_container{
+        grid-template-columns: 145px;
+        justify-content: center;
+    }
+    .work_item{
+        font-size: .813rem;
+    }
+    .work_filters{
+        column-gap: .25rem;
+    }
+    .footer{
+        border-radius: 30% 30% 0 0;
+    }
+
+}
+
+@media screen and (min-width:576px){
+    .nav_menu{
+        width: 328px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+    .about_info{
+        grid-template-columns: repeat(3, 140px);
+        justify-content: center;
+    }
+    .about_description{
+        padding: 0 5rem;
+    }
+    .skills_container{
+        justify-content: center;
+    }
+    .skills_content{
+        padding: 2rem 4rem;
+    }
+    .services_container{
+        grid-template-columns: repeat(2, 160px);
+        justify-content: center;
+    }
+    .work_container{
+        justify-content: center;
+    }
+    .work_img{
+        width: 295px;
+    }
+    .contact_info{
+        grid-template-columns: 300px;
+        justify-content: center;
+    }
+    .contact_form{
+        width: 360px;
+        margin: 0 auto;
+    }
+    
+
+    
+}
+@media screen and (min-width: 775px){
+    .work_container{
+        grid-template-columns: repeat(2, max-content);
+    }
+    .contact_container{
+        grid-template-columns: repeat(2, max-content);
+        justify-content: center;
+        column-gap: 3rem;
+    }
+}
+@media screen and (min-width: 992px){
+    .container{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .section{
+        padding: 6.5rem 0 1rem;
+    }
+    .section_title{
+        margin-bottom: 2rem;
+    }
+    .nav{
+        height: calc(3.5 + 1rem);
+
+    }
+    .home_handle{
+        width: 290px;
+        height: 400px;
+    }
+    .home_img{
+        width: 220px;
+    }
+    .home_social-link{
+        padding: .4rem;
+        font-size: 1.25rem;
+    }
+    .home_social::after{
+        transform: rotate(90deg) translate(16px, 0);
+    }
+    .home_scroll-icon{
+        font-size: 2rem;
+    }
+    .about_container{
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        column-gap: 4rem;
+    }
+    .about_img{
+        width: 350px;
+    }
+    .about_data{
+        text-align: initial;
+    }
+    .about_info{
+        justify-content: center;
+    }
+    .about_box{
+        text-align: center;
+        padding: 1rem 1.25rem;
+    }
+    .about_description{
+        padding: 0 4rem 0 0;
+        margin-bottom: 2.5rem;
+    }
+    .skills_container{
+        grid-template-columns: repeat(1, 700px);
+        column-gap: 3rem;
+    }
+    .services_container{
+        grid-template-columns: repeat(3, 193px);
+        column-gap: 3rem;
+    }
+    .work_container{
+        gap: 3rem;
+    }
+    .work_card{
+        padding: 1.25rem;
+    }
+    .work_img{
+        margin-bottom: 1rem;
+    }
+    .work_title{
+        margin-bottom: .5rem;
+    }
+    .contact_container{
+        column-gap: 6rem;
+    }
+    
+
+}
+@media (max-width:800px){
+    .education_container .col{
+        display: block;
+    }
+}
+
+
+
+
+
+
