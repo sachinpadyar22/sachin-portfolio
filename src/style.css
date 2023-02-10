@@ -195,6 +195,7 @@ img{
     background-color: hsl(250, 65%, 74%);
     transform: rotate(90deg) translate(16px, 3px);
 }
+
 .home-social-link{
     width: max-content;
     background-color: hsl(220, 31%, 14%);
