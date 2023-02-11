@@ -483,6 +483,7 @@ img{
 .contact_card-data{
     display: block;
     margin-bottom: .75rem;
+    color: white;
 }
 .contact_button{
     color: hsl(250, 65%, 74%);
