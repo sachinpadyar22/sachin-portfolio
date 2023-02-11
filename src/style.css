@@ -480,7 +480,7 @@ img{
 .contact_card-title{
     font-weight: 500;
 }
-.contact_card-data{
+.contact_card span{
     display: block;
     margin-bottom: .75rem;
     color: white;
